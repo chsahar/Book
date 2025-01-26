@@ -9,9 +9,13 @@ import java.util.List;
 
 @Service
 public class BookService {
-    @Autowired
-  BookDao bookDao;
-  public List<Book> getAllBooks() {
+//    @Autowired
+   private final BookDao bookDao;
+
+    public BookService(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
+    public List<Book> getAllBooks() {
     return bookDao.findAll();
   }
 }
