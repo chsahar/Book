@@ -1,23 +1,20 @@
 package com.books.books;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "bookss")
 public class Book {
 
 @Id
 @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
-    private String title;
+    private String book;
     private String authors;
-    private String language;
-    private String year;
-    private Double sales;
+    private String original_language;
+    private String first_published;
+    private Double approximate_sales_millions;
     private String genre;
 }
